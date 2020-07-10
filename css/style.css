@@ -1,6 +1,552 @@
 html,
 body {
-    height: 100%;
+    font-family: 'Oswald', sans-serif;
     width: 100%;
+    height: 100%;
+    /* background: grey; */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header-1 {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.591);
+    z-index: 999;
+    transition: all 0.3s ease-in;
+}
+
+.fixednav {
+    position: fixed;
+    padding: 15px 20px;
+    background: black;
+}
+
+.header-1 .logo img {
+    width: 100px;
+    margin-top: 5px;
+}
+
+.header-1 .mainmenu {
+    position: relative;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.header-1 .mainmenu ul li {
+    padding: 2px 10px;
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.header-1 .mainmenu ul li a {
+    color: white;
+    display: block;
+}
+
+.header-1 .mainmenu ul li a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    bottom: 0;
+    width: 0%;
+    background-color: white;
+    transition: 0.3s ease-out;
+}
+
+.header-1 .mainmenu ul li a:hover:after {
+    width: 100%;
+}
+
+.header-1 .navigator {
+    width: 100%;
+    height: 100%;
+}
+
+.header-1 .navigator .search i {
+    font-size: 20px;
+    line-height: 54px;
+    color: white;
+}
+
+
+/* slider part */
+
+.slideLeft {
+    animation: slideLeft 0.5s ease-out;
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.slideRight {
+    animation: slideRight 0.5s ease-out;
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.slideTop {
+    animation: slideTop 0.5s ease-out;
+}
+
+@keyframes slideTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.slideBottom {
+    animation: slideBottom 0.5s ease-out;
+}
+
+@keyframes slideBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.rorateY {
+    animation: rorateY 0.5s ease-out
+}
+
+@keyframes rorateY {
+    0% {
+        transform: perspective(1000px) rotateX(90deg);
+        opacity: 0;
+    }
+    100% {
+        transform: perspective(1000px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+.FadeRorateY {
+    animation: FadeRorateY 0.5s ease-out;
+    transition: 200ms ease-in-out;
+}
+
+@keyframes FadeRorateY {
+    0% {
+        transform: perspective(1000px) rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: perspective(1000px) rotateX(90deg);
+        opacity: 0;
+    }
+}
+
+.mysliders {
+    width: 100%;
+    height: 750px;
+    background: url(../img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* overflow: hidden; */
+    /* filter: blur(1px); */
+}
+
+.slider {
+    padding: 50px;
+    overflow: hidden !important;
     box-sizing: border-box;
+}
+
+.slider .row {
+    position: absolute;
+    top: 150px;
+    padding: 50px;
+    width: 100%;
+    /* overflow: hidden; */
+}
+
+.slider h1 {
+    color: white;
+    font-size: 150px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    float: right;
+}
+
+.slider h3 {
+    color: white;
+    text-transform: capitalize;
+    float: right;
+    font-size: 20px;
+    letter-spacing: 20px;
+}
+
+.slider img {
+    width: 80%;
+    position: absolute;
+    top: -50px
+}
+
+.slider .info {
+    padding-left: 100px;
+}
+
+.slider .info h2 {
+    color: white;
+    font-size: 40px;
+    font-style: italic;
+    margin-top: 80px;
+}
+
+.slider .info .fa {
+    font-size: 20px;
+}
+
+.slider .info .fa-star {
+    color: gold;
+}
+
+.slider .info h4 {
+    color: white;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.slider .info p {
+    color: white;
+    font-weight: 100;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.slider .info ul {
+    list-style: none;
+    color: white;
+}
+
+.slider .info ul li i {
+    color: gold;
+    padding-right: 5px;
+}
+
+.slider .info select {
+    color: black;
+    background-color: gold;
+    border: none;
+    outline: none;
+    padding: 1px 5px;
+    margin: 10px
+}
+
+.slider .info a {
+    color: white;
+    border: 1px solid white;
+    text-decoration: none;
+    padding: 5px 20px;
+    text-transform: capitalize;
+    margin: 10px;
+    transition: 0.5s ease-out;
+    display: inline-block;
+}
+
+.slider .info a:hover {
+    color: black;
+    background-color: white;
+}
+
+.slider .info span {
+    color: white;
+    font-weight: 600;
+    margin: 10px;
+    display: inline-block;
+}
+
+.next,
+.pre {
+    color: white;
+    padding: 20px 10px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    cursor: pointer;
+}
+
+.next {
+    right: 0
+}
+
+
+/* rotating cards section */
+
+.rotating-cards {
+    margin: 100px auto;
+}
+
+.rotating-cards h4 {
+    color: deepskyblue;
+    text-transform: uppercase;
+}
+
+.rotating-cards h2 {
+    text-transform: uppercase;
+    font-size: 45px;
+    width: 70%;
+    margin: 20px auto;
+    font-weight: 400;
+}
+
+.rotating-cards p {
+    /* font-size: 45px; */
+    color: grey;
+    width: 50%;
+    margin: 40px auto;
+    font-weight: 400;
+}
+
+.rotating-cards .cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rotating-cards .cards .card {
+    margin: 10px;
+    flex-basis: 100px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    border: 2px solid grey;
+    transition: 0.5s ease-in;
+    transform-style: preserve-3d;
+    transform: perspective(400px)
+}
+
+.rotating-cards .cards .card .front i,
+.rotating-cards .cards .card .back i {
+    margin-top: 50px;
+    color: grey;
+}
+
+.rotating-cards .cards .card .front p,
+.rotating-cards .cards .card .back p {
+    margin-top: 10px;
+    color: grey
+}
+
+.rotating-cards .cards .card .front {
+    backface-visibility: hidden;
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.rotating-cards .cards .card .back i {
+    color: white;
+}
+
+.rotating-cards .cards .card .back p {
+    color: white;
+}
+
+.rotating-cards .cards .card .back {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: deepskyblue;
+    color: white;
+}
+
+.rotating-cards .cards .card:hover {
+    transform: rotateY(180deg);
+    border: 2px solid deepskyblue !important;
+}
+
+
+/* navtab section */
+
+.myNavTab {
+    padding: 100px;
+    color: white;
+}
+
+.myNavTab .nav-tabs {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    border-bottom: none;
+    margin: 50px auto 50px auto;
+}
+
+.myNavTab .nav-tabs .nav-item {
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+}
+
+.myNavTab .nav-tabs .active {
+    color: wheat;
+    border-bottom: 2px solid wheat;
+}
+
+.myNavTab .nav-tabs .nav-item .fa {
+    padding: 5px
+}
+
+.myNavTab .tab-content .first .row {
+    margin-bottom: 40px;
+}
+
+.myNavTab .tab-content .first .text {
+    text-align: right;
+}
+
+.myNavTab .tab-content .first .text h2 {
+    font-size: 25px;
+}
+
+.myNavTab .tab-content .first .text p {
+    font-size: 15px;
+}
+
+.myNavTab .tab-content .first .icon i {
+    font-size: 40px;
+    line-height: 60px;
+    background-color: white;
+    color: grey;
+    /* padding: 10px; */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.second {
+    text-align: left;
+}
+
+.second span {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.second .col-6 {
+    margin-top: 30px
+}
+
+.second i {
+    font-size: 40px;
+    line-height: 60px;
+    background-color: white;
+    color: grey;
+    /* padding: 10px; */
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.second h2 {
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 20px
+}
+
+.second .col-6 p {
+    font-weight: 200;
+}
+
+
+/* design section */
+
+.design {
+    padding: 150px;
+}
+
+.design img {
+    width: 100%;
+}
+
+.design h3 {
+    text-transform: uppercase;
+    margin-top: 50px
+}
+
+.design p {
+    margin: 30px auto 70px auto;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.design .read {
+    border: 2px solid blueviolet;
+    color: white;
+    background-color: blueviolet;
+    border-radius: 40px;
+    padding: 5px 40px;
+    text-transform: uppercase;
+    font-size: 12px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.design .read:hover {
+    color: blueviolet;
+    background-color: white;
+}
+
+.design .modal {
+    transform: perspective(800px);
+    transform-style: preserve-3d;
+}
+
+.design .modal-content {
+    position: relative;
+}
+
+.design .modal-content button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 15px;
+    margin-top: 10px;
+    z-index: 99
 }
